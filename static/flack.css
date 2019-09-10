@@ -1,0 +1,28 @@
+/*Sean Chapin "project2" implementation */
+/* SASS Inheritance implementation*/
+#home {
+  margin-top: 10px;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-position: center top;
+  background-color: white;
+  font-family: 'Times New Roman', Times, serif;
+  color: #000000; }
+
+/* Home page background picture and formatting info */
+.navbar-nav {
+  font-weight: bold;
+  padding-top: 40px;
+  padding-left: 20px;
+  font-size: 150%; }
+
+h1 {
+  font-size: 450%;
+  color: green;
+  text-align: center; }
+
+h3 {
+  text-align: center; }
+
+/*# sourceMappingURL=flack.css.map */

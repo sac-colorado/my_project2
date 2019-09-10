@@ -14,6 +14,12 @@ Session(app)
 app.config["SECRET KEY"] = os.urandom(24)
 # socketio = SocketIO(app)
 
+# Global storage for chat room --> users, channels, messages
+user_names = []
+channel_list = []
+users_and_messages = {}
+
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     return render_template("index.html")
@@ -23,11 +29,13 @@ def login():
     display_name = request.form.get("name")
     if session.get("display_name") == None:    # Check if display_name is already in the sessions dictionary
         session["display_name"] = display_name # Save the display_name in the session dictionary
-        return  "Welcome " + display_name + "!"
+        welcome_str = "Welcome " + display_name + "!"
+        return  render_template("channel_list.html", channels = channel_list, welcome = welcome_str)
     else:
         if session.get("display_name") == display_name:
-            return "Welcome back " + display_name + "!"
-        
+            welcome_str = "Welcome back " + display_name + "!"
+            return  render_template("channel_list.html", channels = channel_list, welcome = welcome_str)
+                  
         return "You entered your display name incorrectly - please try again."
    
 

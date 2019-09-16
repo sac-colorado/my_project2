@@ -22,7 +22,7 @@ users_and_messages = {}
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    return render_template("index.html")
+    return render_template("index.html", error_message = "")
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -32,16 +32,16 @@ def login():
         welcome_str = "Welcome " + display_name + "!"
         user_names.append(display_name)        # Add the new display_name to the user_names list.
         string_names = str(user_names)
-        return string_names
+        return welcome_str + '  ' + string_names
         #return  render_template("channel_list.html", channels = channel_list, welcome = welcome_str)
     else:
         if session.get("display_name") == display_name:
             welcome_str = "Welcome back " + display_name + "!"
             string_names = str(user_names)
-            return welcome_str
+            return welcome_str + '  ' + string_names
             #return  render_template("channel_list.html", channels = channel_list, welcome = welcome_str)
                   
-        return "You entered your display name incorrectly - please try again."
+        return render_template("index.html" , error_message = "You entered your 'saved' display name incorrectly - please try again")
    
 
 #if __name__ == '__main__':

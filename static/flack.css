@@ -23,6 +23,12 @@ h1 {
   text-align: center; }
 
 h3 {
-  text-align: center; }
+  text-align: center;
+  color: blue; }
+
+h5 {
+  font-size: 85%;
+  text-align: center;
+  color: red; }
 
 /*# sourceMappingURL=flack.css.map */

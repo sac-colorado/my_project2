@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- added bootstrap cdn -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+    <!-- added bootstrap cdn -->                                                                            
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" \
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  -->
 
-<!-- My css file -->
-<link rel="stylesheet" type="text/css" href="../static/flack.css">
+    <!-- My css file -->
+    <link rel="stylesheet" type="text/css" href = "../static/flack.css">
+            <title>My Website!</title>
 
-
-    <title>Sign_in</title>
 </head>
 <body>
 
      <h3 id="sign_in"> Sign_in </h3>
         <div id="sign_in_form">  
+            <h5> {{error_message}} </h5>
             <form action="login" method="post">
                 <div class="form-group row">
                     <label for="inputUserName" class="col-sm-2 col-form-label">display_name</label>

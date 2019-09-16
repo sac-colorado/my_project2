@@ -30,11 +30,16 @@ def login():
     if session.get("display_name") == None:    # Check if display_name is already in the sessions dictionary
         session["display_name"] = display_name # Save the display_name in the session dictionary
         welcome_str = "Welcome " + display_name + "!"
-        return  render_template("channel_list.html", channels = channel_list, welcome = welcome_str)
+        user_names.append(display_name)        # Add the new display_name to the user_names list.
+        string_names = str(user_names)
+        return string_names
+        #return  render_template("channel_list.html", channels = channel_list, welcome = welcome_str)
     else:
         if session.get("display_name") == display_name:
             welcome_str = "Welcome back " + display_name + "!"
-            return  render_template("channel_list.html", channels = channel_list, welcome = welcome_str)
+            string_names = str(user_names)
+            return welcome_str
+            #return  render_template("channel_list.html", channels = channel_list, welcome = welcome_str)
                   
         return "You entered your display name incorrectly - please try again."
    

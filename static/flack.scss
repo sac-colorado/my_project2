@@ -42,6 +42,11 @@ h1 {
     color: goldenrod;
 }
 
+h2 {
+    text-align: center;
+    color: blue;
+ }
+
 h3 {
    text-align: center;
    color: blue;
@@ -52,3 +57,16 @@ h5 {
     text-align: center;
     color: red;
  }
+
+ .channel_list {
+    padding-top: 25px;
+    padding-left: 350px;
+    padding-right: 500px;
+    font-size: 200%;
+}
+
+#create_new_channel {
+    margin: auto;
+    width: 50%;
+}
+

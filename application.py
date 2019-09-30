@@ -16,7 +16,7 @@ app.config["SECRET KEY"] = os.urandom(24)
 
 # Global storage for chat room --> users, channels, messages
 user_names = []
-channel_list = []
+channel_list = [tst_channel1, tst_channel2, tst_channel3]
 users_and_messages = {}
 
 
@@ -45,11 +45,11 @@ def login():
 
 @app.route("/list_current_channels", methods=["GET"])
 def list_current_channels():
-    return render_template("list_current_channels.html", error_message = "")
+    return render_template("list_current_channels.html", channel_list = "channel_list")
 
 @app.route("/create_new_channel", methods=["GET", "POST"])
 def create_new_channel():
-    return render_template("create_new_channel.html", error_message = "")
+    return render_template("create_new_channel.html")
 
 
 #if __name__ == '__main__':

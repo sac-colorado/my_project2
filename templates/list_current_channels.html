@@ -16,8 +16,9 @@
 </head>
 
 <body id="channels_home">
-    <div>                                                                                                 
-        <h1 id="page_title">Flack Channels List</h1> 
+    <div>  
+        <br>                                                                                               
+        <h2 id="page_title">Flack Channels List</h2> 
         <br>
         <br>                                                                    
     </div>
@@ -39,9 +40,14 @@
 -->
     <div class="channel_list">
         {% for channel in channel_list %}
-            <h3>{{channel}}</h3>
-    <!--         <a href="/book_page/{{ book.isbn }}" class="list-group-item list-group-item-action list-group-item-primary">Title: {{ book.title }}&emsp;&emsp;<br>isbn: {{ book.isbn }}&emsp;&emsp;year: {{ book.year }}&emsp;&emsp;Author: {{ book.author }}</a> -->
+            <a href="{{channel}}" class = "list-group-item list-group-item-action list-group-item-primary">{{channel}}</a> 
         {% endfor %}
+    </div>
+
+    <br>
+
+    <div id="create_new_channel">
+            <a class="btn btn-primary" href="{{ url_for('create_new_channel') }}" role="button">create new channel</a>
     </div>
 
     

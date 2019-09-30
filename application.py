@@ -32,17 +32,25 @@ def login():
         welcome_str = "Welcome " + display_name + "!"
         user_names.append(display_name)        # Add the new display_name to the user_names list.
         string_names = str(user_names)
-        return welcome_str + '  ' + string_names
+        return render_template("channels_page.html", welcome_message = welcome_str + '  ' + string_names)
         #return  render_template("channel_list.html", channels = channel_list, welcome = welcome_str)
     else:
         if session.get("display_name") == display_name:
             welcome_str = "Welcome back " + display_name + "!"
             string_names = str(user_names)
-            return welcome_str + '  ' + string_names
+            return render_template("channels_page.html", welcome_message = welcome_str + '  ' + string_names)
             #return  render_template("channel_list.html", channels = channel_list, welcome = welcome_str)
                   
         return render_template("index.html" , error_message = "You entered your 'saved' display name incorrectly - please try again")
-   
+
+@app.route("/list_current_channels", methods=["GET"])
+def list_current_channels():
+    return render_template("list_current_channels.html", error_message = "")
+
+@app.route("/create_new_channel", methods=["GET", "POST"])
+def create_new_channel():
+    return render_template("create_new_channel.html", error_message = "")
+
 
 #if __name__ == '__main__':
 #    socketio.run(app)

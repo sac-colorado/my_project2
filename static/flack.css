@@ -22,6 +22,15 @@ h1 {
   color: green;
   text-align: center; }
 
+#page_title {
+  font-size: 450%;
+  color: blue;
+  text-align: center; }
+
+#welcome_message {
+  text-align: center;
+  color: goldenrod; }
+
 h3 {
   text-align: center;
   color: blue; }

@@ -49,7 +49,9 @@ def list_current_channels():
 
 @app.route("/create_new_channel", methods=["GET", "POST"])
 def create_new_channel():
-    return render_template("create_new_channel.html")
+    new_channel_name = request.get.form("new_channel_name")
+    channel_list.append(new_channel_name)
+    return render_template("list_current_channels.html", channel_list = channel_list)
 
 
 #if __name__ == '__main__':

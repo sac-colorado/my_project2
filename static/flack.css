@@ -22,8 +22,25 @@ h1 {
   color: green;
   text-align: center; }
 
+h2 {
+  text-align: center;
+  color: turquoise; }
+
+h3 {
+  text-align: center;
+  color: blue; }
+
+h4 {
+  text-align: center;
+  color: goldenrod; }
+
+h5 {
+  font-size: 85%;
+  text-align: center;
+  color: red; }
+
 #page_title {
-  font-size: 450%;
+  font-size: 300%;
   color: blue;
   text-align: center; }
 
@@ -31,27 +48,20 @@ h1 {
   text-align: center;
   color: goldenrod; }
 
-h2 {
-  text-align: center;
-  color: blue; }
-
-h3 {
-  text-align: center;
-  color: blue; }
-
-h5 {
-  font-size: 85%;
-  text-align: center;
-  color: red; }
-
-.channel_list {
-  padding-top: 25px;
-  padding-left: 350px;
-  padding-right: 500px;
-  font-size: 200%; }
+#channel_list {
+  font-size: 150%;
+  margin: auto; }
 
 #create_new_channel {
   margin: auto;
-  width: 50%; }
+  padding-left: 70px; }
+
+#login_in {
+  margin: auto;
+  padding-left: 150px; }
+
+#create_new_channel_button {
+  margin: auto;
+  padding-left: 75px; }
 
 /*# sourceMappingURL=flack.css.map */

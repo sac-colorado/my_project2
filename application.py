@@ -49,7 +49,11 @@ def list_current_channels():
 
 @app.route("/create_new_channel", methods=["GET", "POST"])
 def create_new_channel():
-    new_channel_name = request.get.form("new_channel_name")
+    return render_template("create_new_channel.html", channel_list = channel_list)
+
+@app.route("/list_new_channels", methods=["GET", "POST"])
+def list_new_channels():
+    new_channel_name = request.form.get("new_channel_name")
     channel_list.append(new_channel_name)
     return render_template("list_current_channels.html", channel_list = channel_list)
 

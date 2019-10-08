@@ -17,14 +17,16 @@ app.config["SECRET KEY"] = os.urandom(24)
 # Global storage for chat room --> users, channels, messages
 user_names = []
 channel_list = ["tst_channel1", "tst_channel2", "tst_channel3"]
-users_and_messages = {}
+# users_and_messages will be a list of dictionaries in the form of: [{channel_key: [[display_name, 
+# time_stamp, message], [...]], {channel_key: [[display_name, time_stamp, message], [...]]}]
+users_and_messages = []
 
 
 @app.route("/", methods=["GET", "POST"])
 def index():
     return render_template("index.html", error_message = "")
 
-@app.route("/login", methods=["GET", "POST"])
+@app.route("/login", methods=["POST"])
 def login():
     display_name = request.form.get("name")
     if session.get("display_name") == None:    # Check if display_name is already in the sessions dictionary
@@ -51,7 +53,7 @@ def list_current_channels():
 def create_new_channel():
     return render_template("create_new_channel.html", channel_list = channel_list)
 
-@app.route("/list_new_channels", methods=["GET", "POST"])
+@app.route("/list_new_channels", methods=["POST"])
 def list_new_channels():
     new_channel_name = request.form.get("new_channel_name")
     channel_list.append(new_channel_name)

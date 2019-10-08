@@ -11,6 +11,8 @@
 <!-- My css file -->
     <link rel="stylesheet" type="text/css" href="../static/flack.css">
 
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
     <title>Channels Page</title>
 
 </head>
@@ -50,8 +52,8 @@
             <div class = "col-sm">
             </div>
             <div classs = "col-6">
-                <a role ="button" class="btn btn-primary btn-md active"  href="{{ url_for('list_current_channels') }}">List Current Channel</a>
-                <a role ="button" class="btn btn-secondary btn-md active" href="{{ url_for('create_new_channel') }}">Create New Channel</a>       
+                <a role ="button" class="btn btn-primary btn-md active"  href="{{ url_for('list_current_channels') }}">List Current Channels</a>
+                <a role ="button" class="btn btn-secondary btn-md active" href="{{ url_for('create_new_channel') }}">Create New Channels</a>       
             </div>
             <div class = "col-sm">
             </div>

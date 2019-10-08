@@ -11,6 +11,9 @@
 <!-- My css file -->
     <link rel="stylesheet" type="text/css" href="../static/flack.css">
 
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>                                                                                                 
+    <script src="{{ url_for('static', filename='list_current_channels.js') }}"></script>                                 
+       
     <title>Channels List Page</title>
 
 </head>
@@ -52,7 +55,8 @@
             </div>
                 <div class="col-3" id = "channel_list">
                     {% for channel in channel_list %}
-                    <a href="{{channel}}" class = "list-group-item list-group-item-action list-group-item-primary">{{channel}}</a> 
+                    <!-- <a href="{{channel}}" class = "list-group-item list-group-item-action list-group-item-primary message_link">{{channel}}</a>  -->
+                        <button class = "list-group-item list-group-item-action list-group-item-primary">{{channel}}</button>
                     {% endfor %}
                 </div>   
             <div class = "col-sm">
@@ -68,11 +72,16 @@
             <div class = "col-sm">
             </div>
                 <div id="create_new_channel" class = "col-3">
-                    <a class="btn btn-primary" role = "button" href="{{ url_for('create_new_channel') }}" role="button">Create New Channel</a>
+                    <a class="btn btn-primary" href="{{ url_for('create_new_channel') }}" role="button">Create New Channel</a>
                 </div>
             <div class = "col-sm">
             </div>
         </div>
+    </div>
+
+    <div>
+        <ul id = "message_list">
+        </ul>
     </div>
 
 

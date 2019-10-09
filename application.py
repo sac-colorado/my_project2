@@ -2,7 +2,7 @@ import os
 
 from flask import Flask, render_template, request, session
 from flask_session import Session
-# from flask_socketio import SocketIO, emit
+from flask_socketio import SocketIO, emit
 
 app = Flask(__name__)
 # app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
@@ -12,11 +12,15 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 app.config["SECRET KEY"] = os.urandom(24)
-# socketio = SocketIO(app)
+socketio = SocketIO(app)
 
 # Global storage for chat room --> users, channels, messages
 user_names = []
 channel_list = ["tst_channel1", "tst_channel2", "tst_channel3"]
+<<<<<<< HEAD
+=======
+
+>>>>>>> implement_io_socket
 # users_and_messages will be a list of dictionaries in the form of: [{channel_key: [[display_name, 
 # time_stamp, message], [...]], {channel_key: [[display_name, time_stamp, message], [...]]}]
 users_and_messages = []
@@ -59,6 +63,10 @@ def list_new_channels():
     channel_list.append(new_channel_name)
     return render_template("list_current_channels.html", channel_list = channel_list)
 
+@socketio.on("message")
+def message(data):
+    my_message = data["my_message"]
+    emit("announce_message", {"my_message": my_message}, broadcast = True)
 
 #if __name__ == '__main__':
 #    socketio.run(app)
